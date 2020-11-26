@@ -1,0 +1,105 @@
+<aside class="checkout-sidebar-wrapper">
+  <s-cnt-market-ordering-modal-window
+    *ngIf="promoModalState"
+    (clickOnCloseBtn)="closeModalForm()"
+    [orderingModal]="getOrderingModal()"
+  ></s-cnt-market-ordering-modal-window>
+  <div class="checkout-sidebar-container">
+    <div class="checkout-summary-wrap">
+      <div class="checkout-logo-wrap">
+        <div class="checkout-logo-back-color">
+          <div
+            class="checkout-logo-back-img"
+            [ngStyle]="{
+              backgroundImage: 'url(' + getOrderingSidebar.header.logo + ')'
+            }"
+          ></div>
+        </div>
+        <div class="checkout-market-name">
+          {{ getOrderingSidebar.header.shopName }}
+        </div>
+      </div>
+      <div class="checkout-sidebar-product-info-wrapper">
+        <div>
+          <div class="checkout-subtotal">
+            <div class="checkout-subtotal-title">
+              {{ getOrderingSidebar.summary.title }}
+            </div>
+            <div class="checkout-subtotal-price">
+              {{ getOrderingSidebar.summary.price }}&nbsp;
+              <span>{{ getOrderingSidebar.summary.currency }}</span>
+            </div>
+          </div>
+          <div class="checkout-subtotal-detail">
+            <div>{{ getOrderingSidebar.summary.amount }}</div>
+            <div class="checkout-subtotal-weight">
+              <i class="fas fa-weight-hanging"></i>
+              <span>{{ getOrderingSidebar.summary.weight }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="checkout-separator"></div>
+        <div class="shipping-and-assembly-info-wrap">
+          <div class="shipping-and-assembly-info-container">
+            <div class="shipping-and-assembly-info-title" (click)="openAndCloseDropdown()">
+
+              <span>{{ getOrderingSidebar.summary.delivery }}</span>
+              <div class="arrow-wrapper" #arrowTag>
+
+                <i class="fas fa-angle-down arrow"></i>
+              </div>
+            </div>
+            <div class="shipping-and-assembly-info">
+              {{ getOrderingSidebar.summary.status }}
+            </div>
+          </div>
+          <div class="shipping-and-assembly-wrapper" #dropDownTag>
+
+            <div class="collapse-wrapper">
+              <div class="shipping-and-assembly-collapse">
+                <div
+                  class="dropdown-item-wrapper"
+                  *ngFor="let item of getOrderingSidebar.deliveryInfo"
+                >
+                  <s-cnt-market-ordering-sidebar-dropdown
+                    [deliveryInfo]="item"
+                  ></s-cnt-market-ordering-sidebar-dropdown>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-code-block-wrapper">
+        <div class="promo-code-check" (click)="openForm()">
+          <span>{{ getOrderingSidebar.promo }}</span>
+        </div>
+        <div class="promo-code-items">
+          <div
+            class="promo-code-item-wrapper"
+            *ngFor="let item of getOrderingSidebar.promoCards"
+          >
+            <s-cnt-market-ordering-sidebar-promo-code
+              [promoCards]="item"
+              [orderingModal]="getOrderingPromoCardModal()"
+            ></s-cnt-market-ordering-sidebar-promo-code>
+          </div>
+        </div>
+      </div>
+      <div class="final-amount-of-checkout-wrapper">
+        <div class="final-amount-wrapper">
+          <div class="final-amount-title">
+            {{ getOrderingSidebar.totalPrice.title }}
+          </div>
+          <div class="final-amount-value">
+            {{ getOrderingSidebar.totalPrice.price }}&nbsp;
+            <span>{{ getOrderingSidebar.totalPrice.currency }}</span>
+          </div>
+        </div>
+        <button class="checkout-btn checkout-btn-checked">
+          {{ getOrderingSidebar.totalPrice.btn }}
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

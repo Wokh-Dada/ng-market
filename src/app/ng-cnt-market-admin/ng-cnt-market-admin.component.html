@@ -1,0 +1,40 @@
+<main>
+  <div class="admin-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2">
+          <div class="sidebar-left-admin">
+            <div class="sidebar-content">
+              <div class="logo">
+                <img [src]="getLogo()" alt="">
+              </div>
+              <ul>
+                <li class="sidebar-list-item active">
+                  <a [routerLink]="['/admin']" >Товары</a>
+                </li>
+                <li class="sidebar-list-item">
+                  <a [routerLink]="['/categories']" >Категории</a>
+
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-10">
+          <div *ngIf="!showProductList">
+            <s-cnt-market-products-list-admin
+              [marketProductsListAdmin]="getMarketProductsListAdmin()"
+              (clickOnAddNewProduct)="clickOnAddNewProduct()"
+            > </s-cnt-market-products-list-admin>
+          </div>
+          <div *ngIf="showProductList">
+            <s-cnt-market-product-adding
+              (clickOnBackProductList)="clickOnBackProductList()"
+            ></s-cnt-market-product-adding>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,53 @@
+
+.admin-wrapper {
+  margin: 0 50px;
+}
+
+.logo {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.sidebar-left-admin {
+  background-color: #f3f4f7;
+  //color: #fff;
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.sidebar-list-item {
+  padding: 10px 30px;
+  font-weight: 500;
+  transition: .3s ease;
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sidebar-list-item:hover {
+  color: #007bff;
+}
+
+.sidebar-list-item a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar-list-item:hover {
+  color: inherit;
+}
+
+.active {
+  color: #1f78d8;
+}

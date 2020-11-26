@@ -1,0 +1,38 @@
+<app-ng-cnt-market-header [firstPage]="false"></app-ng-cnt-market-header>
+<div class="overlayBackDrop"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <div class="sideBar-wrapper">
+        <ul class="user-menu" >
+          <li>
+            <a [routerLink]="['/account']" class="user-menu-item-link"   >
+              <span class="icon-item" ><i class="far fa-user-circle"></i></span>
+              <div class="user-menu-item-title" >Аккаунт  </div>
+              <span class="icon-arrow"><i class="fas fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a  [routerLink]="['/favorite']" class="user-menu-item-link "   >
+              <span class="icon-item" ><i class="far fa-heart"></i></span>
+              <div class="user-menu-item-title" >Любимые товары  </div>
+              <span class="icon-arrow"><i class="fas fa-angle-right"></i></span>
+            </a>
+          </li>
+          <li>
+            <a  [routerLink]="['/shipments']" class="user-menu-item-link active "  >
+              <span class="icon-item" ><i class="fas fa-history"></i></span>
+              <div class="user-menu-item-title" > Заказы  </div>
+              <span class="icon-arrow"><i class="fas fa-angle-right"></i></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 col-md-9">
+      <s-cnt-market-shipments></s-cnt-market-shipments>
+    </div>
+  </div>
+</div>
+<!--<s-cnt-market-shipments></s-cnt-market-shipments>-->
+<app-ng-cnt-market-footer></app-ng-cnt-market-footer>

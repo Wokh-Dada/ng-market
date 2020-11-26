@@ -1,0 +1,38 @@
+<div class="ordering-column">
+  <div class="ordering-panels">
+    <s-cnt-market-ordering-method
+      [method]="getMethod()"
+      [addOrRemoveClassState]="addOrRemoveClassState === 1"
+      (removeClassActive)="removeClassActive($event.detail)"
+      (addClassActive)="addClassActive($event.detail)"
+    ></s-cnt-market-ordering-method>
+    <s-cnt-market-ordering-contacts
+      [contacts]="getOrderingContacts()"
+      [addOrRemoveClassState]="addOrRemoveClassState === 2"
+      (removeClassActive)="removeClassActive($event.detail)"
+      (addClassActive)="addClassActive($event.detail)"
+    ></s-cnt-market-ordering-contacts>
+    <s-cnt-market-ordering-replacements
+      [replacements]="getOrderingReplacements()"
+      [addOrRemoveClassState]="addOrRemoveClassState === 3"
+      (removeClassActive)="removeClassActive($event.detail)"
+      (addClassActive)="addClassActive($event.detail)"
+    ></s-cnt-market-ordering-replacements>
+    <s-cnt-market-ordering-payment
+      [orderingModals]="getOrderingModal()"
+      [payment]="getOrderingPayment()"
+      [addOrRemoveClassState]="addOrRemoveClassState === 4"
+      (removeClassActive)="removeClassActive($event.detail)"
+      (addClassActive)="addClassActive($event.detail)"
+    ></s-cnt-market-ordering-payment>
+    <s-cnt-market-ordering-time-of-receipt
+      [timetable]="getOrderingTimetable()"
+      [addOrRemoveClassState]="addOrRemoveClassState === 5"
+      (removeClassActive)="removeClassActive($event.detail)"
+      (addClassActive)="addClassActive($event.detail)"
+    ></s-cnt-market-ordering-time-of-receipt>
+  </div>
+  <s-cnt-market-ordering-final
+    [final]="getOrderingFinal()"
+  ></s-cnt-market-ordering-final>
+</div>
