@@ -12,7 +12,7 @@ import {NgCntMarketAccountUserComponent} from "./shared/ng-cnt-market-account-us
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'first',
     component: NgCntMarketFirstPageComponent,
   },
   {
@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NgCntMarketFirstPageComponent,
+    component: NgCntMarketSecondPageComponent,
   },
 ];
 
