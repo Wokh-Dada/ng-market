@@ -16,4 +16,5 @@
 - Кастомные модальные окна слайдеры и т.д.;
 - Также кастомные анимации и скрипты для их правильной работы;
 
+### StencilJS компоненты - [Перейти](https://github.com/Wokh-Dada/shop-market)
 ### Демо версия - [Демо](https://wokh-dada.github.io/ng-market-place/)
